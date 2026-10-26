@@ -1,0 +1,4 @@
+#!/bin/sh
+# Run Linux Music RPC directly from the source tree.
+HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PYTHONPATH="$HERE${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m music_rpc "$@"

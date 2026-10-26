@@ -1,0 +1,20 @@
+[Unit]
+Description=Linux Music RPC (MPRIS -> Discord Rich Presence)
+Documentation=file:///usr/share/doc/linux-music-rpc/README.md
+After=graphical-session.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+# Without --config the program uses XDG_CONFIG_HOME (default ~/.config).
+ExecStart=/usr/bin/linux-music-rpc
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+# Discord may be a Flatpak/Snap app or use /tmp for its IPC socket.
+# Do not enable PrivateTmp or restrict the runtime directory.
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

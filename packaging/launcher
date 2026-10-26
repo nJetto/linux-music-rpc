@@ -1,0 +1,3 @@
+#!/bin/sh
+# Installed launcher for a system-wide package.
+PYTHONPATH="/usr/lib/linux-music-rpc${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m music_rpc "$@"

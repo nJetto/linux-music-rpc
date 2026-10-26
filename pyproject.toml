@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linux-music-rpc"
+version = "1.0.0"
+description = "MPRIS to Discord Rich Presence bridge for Linux"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "nJetto" }]
+keywords = ["discord", "rich-presence", "mpris", "linux", "music", "rpc"]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+dependencies = []
+
+[project.scripts]
+linux-music-rpc = "music_rpc.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nJetto/linux-music-rpc"
+
+[tool.setuptools]
+packages = ["music_rpc"]
+
+[tool.setuptools.package-data]
+music_rpc = ["config.example.ini"]
